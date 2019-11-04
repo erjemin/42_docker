@@ -5,10 +5,18 @@
 # fix all four environment variables with one command, and you are not allowed to
 # use your shell’s builtin to set these variables by hand.
 
-# Определите переменные, необходимые вашей виртуальной машине Char, в общем
-# окружении (env) вашего терминала, чтобы вы могли выполнить команду docker ps
+# Определите переменные в вашем терминале, необходимые вашей виртуальной машине Char,
+# в общем окружении (env), чтобы вы могли выполнить команду docker ps
 # без ошибок. Вы должны исправить все четыре переменные среды с помощью одной
 # команды, и вам не разрешено использовать встроенную функцию вашей оболочки
 # для установки этих переменных вручную.
 
-eval $(docker-machine env Char)
+export DCM_CHAR_EVAL="$(docker-machine env Char)"
+
+## В переменной окружение DCM_CHAR_EVAL, может оказаться, например:
+# export DOCKER_TLS_VERIFY="1"
+# export DOCKER_HOST="tcp://192.168.99.100:2376"
+# export DOCKER_CERT_PATH="/Users/mac/.docker/machine/machines/Char"
+# export DOCKER_MACHINE_NAME="Char"
+# Run this command to configure your shell:
+# eval $(docker-machine env Char)
