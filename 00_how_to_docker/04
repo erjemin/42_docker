@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Get the hello-world container from the Docker Hub, where it’s available.
+
+# Загрузите и установите контейнер hello-world из DockerHub (он там есть).
+
+docker pull hello-world
